@@ -1,7 +1,9 @@
 package org.sereinfish.catcat.image.tool.utils
 
+import org.jetbrains.skija.Bitmap
 import org.jetbrains.skija.Color
 import org.jetbrains.skija.Paint
+import org.sereinfish.catcat.image.tool.core.measure.size.IntSize
 
 fun Any?.println() =
     println(this)
@@ -87,3 +89,5 @@ inline fun <T> Array<out T>.forEachResult(action: (T) -> Boolean): Boolean {
     }
     return ret
 }
+
+fun Bitmap.getSize() = IntSize(this.width, this.height)

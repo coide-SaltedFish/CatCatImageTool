@@ -1,12 +1,10 @@
 package org.sereinfish.catcat.image.tool.utils
 
-import org.jetbrains.skija.Bitmap
-import org.jetbrains.skija.Codec
-import org.jetbrains.skija.Data
-import org.jetbrains.skija.Image
+import org.jetbrains.skija.*
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream
+import java.io.FileOutputStream
 
 fun Bitmap.toImage() =
     Image.makeFromBitmap(this)
@@ -29,3 +27,13 @@ fun loadBitmapByFile(
 
 fun loadImageByFile(file: File) =
     loadBitmapByFile(file).toImage()
+
+/**
+ * 写入图像到文件
+ */
+fun writeImageByFile(image: Image, file: File, encodedImageFormat: EncodedImageFormat = EncodedImageFormat.PNG): File{
+    FileOutputStream(file).use {
+        it.write(image.encodeToData(encodedImageFormat)!!.bytes)
+    }
+    return file
+}

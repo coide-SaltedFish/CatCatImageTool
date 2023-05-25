@@ -4,72 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a10cc06-b4f3-4123-9a99-f4b70971a033" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/ElementBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/ImageBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/LayoutSubElementBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/BlurBackgroundDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/DrawerBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/ElementShadowDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/FrameStrokeDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/PaddingDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/RoundRectDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/RoundRectShadowDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/CircleBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/ImageBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/RRectBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/RectBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/TextBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/layout/AbsoluteLayoutBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/layout/ColumnLayoutBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/layout/RowLayoutBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/context/Context.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/context/DrawerContext.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/Element.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/layout/Layout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/Alignment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/Padding.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/FloatOffset.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/IntOffset.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/Offset.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/ElementSize.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/IntSize.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/Size.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/shadow/ShadowInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/draw/Drawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/draw/DrawerChain.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/AbstractElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/CircleElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/ImageElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/RRectElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/RectElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TestElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TestShadowElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TextElement.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/AbsoluteLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/AbstractLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/ColumnLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/RowLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/DrawerLevel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/ImageBlurTool.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/ImageUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/SortedList.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/Utils.kt" afterDir="false" />
+    <list default="true" id="0a10cc06-b4f3-4123-9a99-f4b70971a033" name="变更" comment="初始提交">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/background/BackgroundBlurDrawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/background/BackgroundColorDrawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/background/BackgroundImageDrawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/background/BackgroundParentImageDrawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/foreground/ForegroundFrameStrokeDrawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/ImageElementBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/TextElementBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/layout/ColumnLayoutBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/layout/RowLayoutBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/draw/DrawChain.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/draw/Drawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/AbstractElement.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/layout/AbstractLayout.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/layout/Layout.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/CropImageMode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/ShadowInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/rect/FloatRectSize.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/rect/IntRectSize.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/rect/RectSize.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/FloatSize.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/AbsoluteLayout.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/ColumnLayout.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/RowLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/ElementBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/ImageBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/ImageBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/LayoutSubElementBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/BlurBackgroundDrawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/DrawerBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/DrawerBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/ElementShadowDrawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/FrameStrokeDrawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/PaddingDrawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/RoundRectDrawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/drawer/RoundRectShadowDrawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/CircleBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/ImageBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/RRectBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/RectBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/element/TextBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/layout/AbsoluteLayoutBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/layout/ColumnLayoutBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/builder/layout/RowLayoutBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/Element.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/Element.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/layout/Layout.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/Alignment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/Alignment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/Padding.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/FloatOffset.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/FloatOffset.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/IntOffset.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/offset/IntOffset.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/ElementSize.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/ElementSize.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/IntSize.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/IntSize.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/Size.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/Size.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/shadow/ShadowInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/draw/Drawer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/draw/DrawerChain.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/AbstractElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/CircleElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/ImageElement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/ImageElement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/RRectElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/RectElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TestElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TestShadowElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TextElement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/TextElement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/AbsoluteLayout.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/AbstractLayout.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/ColumnLayout.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/layout/RowLayout.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/ImageUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/ImageUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/utils/Utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,9 +126,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Kotlin Data Class" />
-        <option value="Kotlin Interface" />
         <option value="Kotlin Enum" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -141,22 +145,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/project/idea/CatCatImageTool/src/main/kotlin/org/sereinfish/catcat/image/tool/utils&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.33371693&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/project/idea/CatCatImageTool/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.33371693",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\idea\CatCatImageTool\src\main\kotlin\org\sereinfish\catcat\image\tool\core\measure" />
+      <recent name="D:\project\idea\CatCatImageTool\src\main\kotlin\org\sereinfish\catcat\image\tool\core\context" />
       <recent name="D:\project\idea\CatCatImageTool\src\main\kotlin\org\sereinfish\catcat\image\tool\utils" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="org.sereinfish.catcat.image.tool.core.element" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="org.sereinfish.catcat.image.tool.utils" />
@@ -271,7 +280,17 @@
       <workItem from="1684583511960" duration="3442000" />
       <workItem from="1684655871456" duration="1571000" />
       <workItem from="1684733929859" duration="13881000" />
+      <workItem from="1684749626139" duration="1117000" />
+      <workItem from="1684913462809" duration="26962000" />
     </task>
+    <task id="LOCAL-00001" summary="初始提交">
+      <created>1684749759956</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684749759956</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,5 +306,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="初始提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始提交" />
   </component>
 </project>

@@ -2,241 +2,172 @@ package org.sereinfish.catcat.image.tool
 
 import org.jetbrains.skija.*
 import org.sereinfish.catcat.image.tool.builder.buildImage
-import org.sereinfish.catcat.image.tool.builder.drawer.*
-import org.sereinfish.catcat.image.tool.builder.element.*
-import org.sereinfish.catcat.image.tool.builder.layout.*
+import org.sereinfish.catcat.image.tool.builder.drawer.background.setBackgroundColor
+import org.sereinfish.catcat.image.tool.builder.drawer.background.setBackgroundImage
+import org.sereinfish.catcat.image.tool.builder.drawer.background.setBackgroundParentImage
+import org.sereinfish.catcat.image.tool.builder.drawer.background.setBlurBackground
+import org.sereinfish.catcat.image.tool.builder.drawer.buildDrawer
+import org.sereinfish.catcat.image.tool.builder.drawer.foreground.setForegroundFrameStroke
+import org.sereinfish.catcat.image.tool.builder.element.layout.column
+import org.sereinfish.catcat.image.tool.builder.element.setTextShadow
+import org.sereinfish.catcat.image.tool.builder.element.text
 import org.sereinfish.catcat.image.tool.core.context.DrawerContext
 import org.sereinfish.catcat.image.tool.core.measure.Alignment
-import org.sereinfish.catcat.image.tool.core.measure.Padding
-import org.sereinfish.catcat.image.tool.core.measure.size.ElementSizeMode
-import org.sereinfish.catcat.image.tool.core.measure.size.IntSize
-import org.sereinfish.catcat.image.tool.core.shadow.ShadowInfo
+import org.sereinfish.catcat.image.tool.core.measure.CropImageMode
+import org.sereinfish.catcat.image.tool.core.measure.ShadowInfo
+import org.sereinfish.catcat.image.tool.core.measure.rect.IntRectSize
 import org.sereinfish.catcat.image.tool.element.ImageElement
-import org.sereinfish.catcat.image.tool.element.TestElement
 import org.sereinfish.catcat.image.tool.element.TextElement
-import org.sereinfish.catcat.image.tool.layout.ColumnLayout
-import org.sereinfish.catcat.image.tool.utils.SortedList
+import org.sereinfish.catcat.image.tool.element.layout.ColumnLayout
 import org.sereinfish.catcat.image.tool.utils.loadImageByFile
 import org.sereinfish.catcat.image.tool.utils.paint
 import org.sereinfish.catcat.image.tool.utils.toImage
+import org.sereinfish.catcat.image.tool.utils.writeImageByFile
 import java.io.File
 import java.io.FileOutputStream
 
-
 fun main() {
-    test5()
-}
-
-fun test5(){
-    val fontType = Typeface.makeFromName("微软雅黑", FontStyle.NORMAL)
-
+//    println("1234".substring(0, 0))
+//    test()
     val image = buildImage {
-        addAbs {
-            addImage(loadImageByFile(File("C:\\Users\\MI\\Pictures\\Saved Pictures\\70858371_p0_master1200.jpg")))
-
-            floatOffset(700f, 170f) put rect(IntSize(40), Color.makeRGB(0, 255, 0))
-
-            floatOffset(710f, 190f) put column({
-                blurBackground(10f, level = 2)
-                frameStroke(Color.makeARGB(100, 97, 97, 97), 1)
-                alignment = Alignment.CENTER_HORIZONTAL
-            }) {
-                + text("你好", Font(fontType, 30f)){
-                    textElement.textColor = Color.makeARGB(200, 255, 255, 255)
-                    textElement.textPadding = Padding(10)
-                    textElement.textShadow = ShadowInfo(2, 1)
-                }
-                + text("Hello World", Font(fontType, 30f)){
-                    textElement.textColor = Color.makeARGB(200, 255, 255, 255)
-                    textElement.textPadding = Padding(10)
-                    textElement.textShadow = ShadowInfo(2, 1)
-                }
-
-                + row({
-                    alignment = Alignment.CENTER_VERTICAL
-                }) {
-                    + image(loadImageByFile(File("C:\\Users\\MI\\Desktop\\temp\\CLY2CD}6%41ND)KR3RNK4UN.jpg"))){
-                        padding = Padding(20)
-//                        element.shadowInfo = ShadowInfo(2, 3)
-                        setRoundRectShadow(15f, ShadowInfo(2, 3), 0)
-                        setRoundRect(15f, 1)
-
-                        setSize(80)
-                    }
-
-                    + image(loadImageByFile(File("C:\\Users\\MI\\Desktop\\temp\\auisiud.jpg"))) {
-                        padding = Padding(10)
-                        element.shadowInfo = ShadowInfo(1, 4)
-                        setSize(80)
-                    }
-                }
+        setHeight(200)
+        setBackgroundImage(loadImageByFile(File("C:\\Users\\MI\\Desktop\\temp\\aad.jpg")), CropImageMode.Crop)
+        alignment = Alignment.CENTER_VERTICAL
+        column {
+            alignment = Alignment.RIGHT
+            setBackgroundParentImage()
+            text("Hello World", Font(Typeface.makeFromName("黑体", FontStyle.BOLD), 32f)){
+                padding = IntRectSize(10)
+                alignment = Alignment.CENTER
+                setTextShadow(ShadowInfo(2, 1))
+                setBlurBackground(2f)
+                setForegroundFrameStroke(Color.makeARGB(100, 96, 96, 96))
+            }
+            column {
+                setSize(10)
+            }
+            text("CatCat Image Tool", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)){
+                alignment = Alignment.RIGHT
+                padding = IntRectSize(3)
+                setMaxWidth()
+                setBackgroundColor(Color.makeARGB(125, 255, 255, 255))
+                setTextShadow(ShadowInfo(2, 1))
             }
         }
     }
-
-    FileOutputStream(File("./test.png")).use {
-        it.write(image.encodeToData(EncodedImageFormat.PNG)!!.bytes)
-    }
-}
-
-fun test4(){
-    val image = buildImage(buildBlock = {
-        alignment = Alignment.CENTER_HORIZONTAL
-        frameStroke(Color.makeRGB(255, 0, 0), 2)
-    }) {
-        addCircle(20, paint {
-            color = Color.makeRGB(255, 0, 0)
-        }){
-            padding = Padding(20)
-        }
-    }
-
-    FileOutputStream(File("./test.png")).use {
-        it.write(image.encodeToData(EncodedImageFormat.PNG)!!.bytes)
-    }
-}
-
-fun test3(){
-    val image = buildImage(buildBlock = {
-        alignment = Alignment.CENTER_HORIZONTAL
-        frameStroke(Color.makeRGB(255, 0, 0), 2)
-        backgroundColor = Color.makeRGB(0x4c, 0xaf, 0x50)
-    }) {
-        + text("上 123 一二三四", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)){
-            textElement.textShader = Shader.makeLinearGradient(0f, 0f, 60f, 0f, intArrayOf(-0xdb8460, -0xc0043))
-                .makeWithColorFilter(ColorFilter.makeBlend(-0x33cccd, BlendMode.SCREEN))
-        }
-
-        addRow {
-            addRRect(IntSize(40), 10f, Color.makeRGB(255, 255, 255)){
-                padding = Padding(10)
-                setRoundRectShadow(10f, ShadowInfo(4, 2), -2)
-                frameStroke(Color.makeRGB(255, 0, 0), 2)
-            }
-
-            addRRect(IntSize(40), 10f, Color.makeRGB(255, 255, 255)){
-                padding = Padding(10)
-                rRectShadow = ShadowInfo(4, 2)
-                frameStroke(Color.makeRGB(255, 0, 0), 2)
-            }
-
-            addRect(IntSize(40), Color.makeRGB(255, 255, 255)){
-                padding = Padding(10)
-                setRoundRect(10f, -1)
-                setRoundRectShadow(10f, ShadowInfo(4, 2), -2)
-
-                restore()
-
-                frameStroke(Color.makeRGB(255, 0, 0), 2)
-            }
-        }
-
-        + row({
-            alignment = Alignment.CENTER_VERTICAL
-        }) {
-            + text("左", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f))
-            + abs({
-                setSize(300, 300)
-                frameStroke(Color.makeRGB(0xff, 0xeb, 0x3b), 2)
-            }) {
-                floatOffset(0f, 0f) put image(loadImageByFile(File("C:\\Users\\MI\\Desktop\\temp\\4e353a34c759b24.jpg"))){
-                    setSizeMode(ElementSizeMode.FILL_MODE)
-                    setRoundRect(30f, -1)
-                }
-                floatOffset(10f, 10f) put text("1234", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)){
-                    blurBackground(1f)
-                    frameStroke(Color.makeARGB(100, 0x9e, 0x9e, 0x9e))
-                }
-                floatOffset(50f, 80f) put rect(IntSize(60, 60), Color.makeARGB(0 ,0 ,0, 0)){
-                    blurBackground(5f)
-                    frameStroke(Color.makeRGB( 0x9e, 0x9e, 0x9e))
-                }
-                floatOffset(60f, 90f) put text("1234", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)){
-                    textElement.textColor = Color.makeARGB(180, 0, 0, 0)
-                    padding = Padding(10)
-                    textElement.textShadow = ShadowInfo(2, 2)
-                }
-
-                floatOffset(20f, 150f) put circle(20, paint {
-                    color = Color.makeARGB(80, 0, 255, 0)
-                }, ShadowInfo(4, 2)){
-                    frameStroke(Color.makeRGB( 0x9e, 0x9e, 0x9e))
-                    padding = Padding(10)
-                }
-            }
-            + text("右 Hamgjl", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)){
-                setSize(100)
-                textElement.alignment = Alignment.CENTER
-                padding = Padding(10)
-                frameStroke(Color.makeRGB(0, 0, 255), 2)
-            }
-        }
-        + text("下", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)){
-            textElement.textShadow = ShadowInfo(offset = 2, sigma = 1)
-        }
-    }
-
-    FileOutputStream(File("./test.png")).use {
-        it.write(image.encodeToData(EncodedImageFormat.PNG)!!.bytes)
-    }
+    writeImageByFile(image, File("./test.png"))
 }
 
 fun test(){
-    val test = TestElement()
-    test.elementSize.mode = ElementSizeMode.SET_MODE
-    test.elementSize.size = IntSize(2000, 1000)
-
-    test.draw(test.getCanvas(), DrawerContext(test))
-    test.bitmap?.let { bitmap ->
-        FileOutputStream(File("./test.png")).use {
-            it.write(bitmap.toImage().encodeToData(EncodedImageFormat.PNG)!!.bytes)
+    val text = TextElement("123", Font(Typeface.makeFromName("黑体", FontStyle.BOLD), 32f)).apply {
+        padding = IntRectSize(10)
+        paint.apply {
+            imageFilter = ImageFilter.makeDropShadow(2f, 2f, 1f, 1f, Color.makeRGB(96,96,96))
         }
+        backgroundDrawer.add(buildDrawer { canvas, context ->
+            canvas.clear(Color.makeRGB(0,0,0))
+            canvas.drawRRect(
+                RRect.makeLTRB(0f, 0f, getLayoutSize().width.toFloat(), getLayoutSize().height.toFloat(), 10f),
+                paint {
+                    color = Color.makeRGB(255, 255, 255)
+                }
+            )
+        })
+        foregroundDrawer.add(buildDrawer { canvas, context ->
+            canvas.drawRect(getLayoutSize().getRect(), paint {
+                mode = PaintMode.STROKE
+                color = Color.makeRGB(255, 0, 0)
+                strokeWidth = 1f
+            })
+        })
     }
-}
 
-fun test1(){
-    val layout = ColumnLayout()
-    layout.backgroundColor = Color.makeRGB(0x9e ,0x9e, 0x9e)
+    val text2 = TextElement("HELLO", Font(Typeface.makeFromName("黑体", FontStyle.BOLD), 20f)).apply {
+        foregroundDrawer.add(buildDrawer { canvas, context ->
+            canvas.drawRect(getLayoutSize().getRect(), paint {
+                mode = PaintMode.STROKE
+                color = Color.makeRGB(255, 0, 0)
+                strokeWidth = 1f
+            })
+        })
+        alignment = Alignment.RIGHT
+//        elementSize.heightSize = ElementSize.SizeValue(
+//            ElementSize.ValueMode.HEIGHT,
+//            ElementSize.SizeMode.MAX,
+//        )
+//        elementSize.widthSize = ElementSize.SizeValue(
+//            ElementSize.ValueMode.WIDTH,
+//            ElementSize.SizeMode.MAX,
+//        )
+    }
 
-    layout.alignment = Alignment.CENTER_HORIZONTAL
+    val image = ImageElement(loadImageByFile(File("C:\\Users\\MI\\Desktop\\temp\\aad.jpg"))).apply {
+        padding = IntRectSize(20)
 
-    layout.add(TextElement("Hello", Font(Typeface.makeDefault(), 18f)).apply {
-        padding = Padding(10)
-        textShadow = ShadowInfo(offset = 2, sigma = 1)
-    })
-    layout.add(TextElement("World", Font(Typeface.makeFromName("微软雅黑", FontStyle.BOLD), 18f)).apply {
-        textShader = Shader.makeLinearGradient(0f, 0f, 60f, 0f, intArrayOf(-0xdb8460, -0xc0043))
-            .makeWithColorFilter(ColorFilter.makeBlend(-0x33cccd, BlendMode.SCREEN))
-        textShadow = ShadowInfo(offset = 1, sigma = 1)
-        padding = Padding(10)
-        paintMode = PaintMode.STROKE
-        strokeWidth = 1f
-    })
-    layout.add(TextElement("CatCat Image Tool", Font(Typeface.makeDefault(), 18f)).apply {
-        padding = Padding(0)
-    })
-    layout.add(TextElement("一二三四 你好", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)).apply {
-        padding = Padding(0)
-    })
-    layout.add(TextElement("世界", Font(Typeface.makeFromName("微软雅黑", FontStyle.NORMAL), 18f)).apply {
-        padding = Padding(0)
-    })
+        backgroundDrawer.add(buildDrawer { canvas, context ->
+            canvas.clear(Color.makeRGB(0,0,0))
+            canvas.drawRRect(
+                RRect.makeLTRB(0f, 0f, getLayoutSize().width.toFloat(), getLayoutSize().height.toFloat(), 10f),
+                paint {
+                    color = Color.makeRGB(255, 255, 255)
+                }
+            )
+        })
 
-    layout.add(
-        ImageElement(loadImageByFile(File("C:\\Users\\MI\\Desktop\\temp\\aaaa.jpg"))).apply {
-            elementSize.mode = ElementSizeMode.SET_MODE
-            elementSize.size = IntSize(100, 200)
+        foregroundDrawer.add(buildDrawer { canvas, context ->
+            // 创建新画布
+            val surface = Surface.makeRaster(getImageInfo())
+            surface.canvas.let { newCanvas ->
+                newCanvas.drawRRect(RRect.makeLTRB(padding.left.toFloat(), padding.top.toFloat(), getSize().width.toFloat(), getSize().height.toFloat(), 10f), paint {
+                })
+                newCanvas.drawImage(bitmap!!.toImage(), 0f, 0f, paint {
+                    setBlendMode(BlendMode.SRC_IN)
+                })
+            }
+            canvas.clear(Color.makeARGB(255,255,255,255))
+            canvas.drawImage(surface.makeImageSnapshot(), 0f, 0f, paint {
+                imageFilter = ImageFilter.makeDropShadow(5f, 5f, 5f, 5f, Color.makeRGB(96,96,96))
+            })
+        })
 
-            shadowInfo = ShadowInfo(offset = 0, sigma = 10)
-            padding = Padding(20)
+        foregroundDrawer.add(buildDrawer { canvas, context ->
+            canvas.drawRect(getLayoutSize().getRect(), paint {
+                mode = PaintMode.STROKE
+                color = Color.makeRGB(255, 0, 0)
+                strokeWidth = 1f
+            })
+        })
+        setWidth(100)
+        setHeight(100)
+        paint.apply {
+            imageFilter = ImageFilter.makeDropShadow(5f, 5f, 5f, 5f, Color.makeRGB(96,96,96))
         }
-    )
+        cropImageMode = CropImageMode.Fit
+    }
+
+    val layout = ColumnLayout().apply {
+        alignment = Alignment.CENTER
+        foregroundDrawer.add(buildDrawer { canvas, context ->
+            canvas.drawRect(getLayoutSize().getRect(), paint {
+                mode = PaintMode.STROKE
+                color = Color.makeRGB(255, 0, 0)
+                strokeWidth = 1f
+            })
+        })
+//        elementSize.heightSize = ElementSize.SizeValue(
+//            ElementSize.ValueMode.HEIGHT,
+//            ElementSize.SizeMode.SET,
+//            200
+//        )
+    }
+    layout.add(text)
+    layout.add(text2)
+    layout.add(image)
 
     layout.draw(layout.getCanvas(), DrawerContext(layout))
-    layout.bitmap?.let { bitmap ->
-        FileOutputStream(File("./test.png")).use {
-            it.write(bitmap.toImage().encodeToData(EncodedImageFormat.PNG)!!.bytes)
-        }
+
+    FileOutputStream(File("./test.png")).use {
+        it.write(layout.bitmap!!.toImage().encodeToData(EncodedImageFormat.PNG)!!.bytes)
     }
 }
 

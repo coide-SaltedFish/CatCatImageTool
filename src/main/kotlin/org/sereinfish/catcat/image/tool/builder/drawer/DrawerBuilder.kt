@@ -2,12 +2,11 @@ package org.sereinfish.catcat.image.tool.builder.drawer
 
 import org.jetbrains.skija.Canvas
 import org.sereinfish.catcat.image.tool.core.context.DrawerContext
-import org.sereinfish.catcat.image.tool.draw.Drawer
+import org.sereinfish.catcat.image.tool.core.draw.Drawer
 
-inline fun buildDrawer(crossinline drawer: (Canvas, DrawerContext) -> Unit): Drawer{
-    return object : Drawer {
+fun buildDrawer(block: (Canvas, context: DrawerContext) -> Unit): Drawer =
+    object : Drawer{
         override fun draw(canvas: Canvas, context: DrawerContext) {
-            drawer(canvas, context)
+            block(canvas, context)
         }
     }
-}
