@@ -6,6 +6,7 @@ import org.sereinfish.catcat.image.tool.core.context.DrawerContext
 import org.sereinfish.catcat.image.tool.core.draw.Drawer
 import org.sereinfish.catcat.image.tool.core.element.Element
 import org.sereinfish.catcat.image.tool.core.measure.CropImageMode
+import org.sereinfish.catcat.image.tool.utils.paint
 
 class BackgroundImageDrawer(
     val image: Image,
@@ -13,7 +14,7 @@ class BackgroundImageDrawer(
 ): Drawer {
     override fun draw(canvas: Canvas, context: DrawerContext) {
         val size = context.element.getLayoutSize()
-        canvas.drawImage(cropImageMode.getImage(image, size), 0f, 0f)
+        canvas.drawImage(cropImageMode.getImage(image, size), 0f, 0f, paint())
     }
 }
 

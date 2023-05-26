@@ -2,6 +2,8 @@ package org.sereinfish.catcat.image.tool.core.measure
 
 import org.jetbrains.skija.*
 import org.sereinfish.catcat.image.tool.core.measure.size.IntSize
+import org.sereinfish.catcat.image.tool.utils.paint
+import org.sereinfish.catcat.image.tool.utils.toBitmap
 import org.sereinfish.catcat.image.tool.utils.toImage
 
 enum class CropImageMode {
@@ -61,10 +63,9 @@ enum class CropImageMode {
                         val scale = layoutSize.width / image.width.toFloat()
                         val imageHeight = scale * image.height
                         val y = (layoutSize.height - imageHeight) / 2f
-
                         canvas.save()
                         canvas.scale(scale, scale)
-                        canvas.drawImage(image, 0f, y / scale)
+                        canvas.drawImage(image, 0f, y / scale, paint())
                         canvas.restore()
                     }else {
                         // 以布局高为准
@@ -74,7 +75,7 @@ enum class CropImageMode {
 
                         canvas.save()
                         canvas.scale(scale, scale)
-                        canvas.drawImage(image, x / scale, 0f)
+                        canvas.drawImage(image, x / scale, 0f, paint())
                         canvas.restore()
                     }
                 }
@@ -92,7 +93,7 @@ enum class CropImageMode {
                         }
                         canvas.save()
                         canvas.scale(scale, scale)
-                        canvas.drawImage(image, 0f, y / scale)
+                        canvas.drawImage(image, 0f, y / scale, paint())
                         canvas.restore()
                     }else {
                         val scale = layoutSize.height / image.height.toFloat()
@@ -104,7 +105,7 @@ enum class CropImageMode {
                         }
                         canvas.save()
                         canvas.scale(scale, scale)
-                        canvas.drawImage(image, x / scale, 0f)
+                        canvas.drawImage(image, x / scale, 0f, paint())
                         canvas.restore()
                     }
                 }
@@ -118,7 +119,7 @@ enum class CropImageMode {
                     }
                     canvas.save()
                     canvas.scale(scale, scale)
-                    canvas.drawImage(image, x / scale, 0f)
+                    canvas.drawImage(image, x / scale, 0f, paint())
                     canvas.restore()
                 }
                 FillWidth -> {
@@ -131,7 +132,7 @@ enum class CropImageMode {
                     }
                     canvas.save()
                     canvas.scale(scale, scale)
-                    canvas.drawImage(image, 0f, y / scale)
+                    canvas.drawImage(image, 0f, y / scale, paint())
                     canvas.restore()
                 }
                 FillBounds -> {
@@ -151,7 +152,7 @@ enum class CropImageMode {
                         }
                         canvas.save()
                         canvas.scale(widthScale, widthScale)
-                        canvas.drawImage(image, 0f, y / widthScale)
+                        canvas.drawImage(image, 0f, y / widthScale, paint())
                         canvas.restore()
                     }else if (image.height > layoutSize.height && image.width <= layoutSize.width){
                         // 高
@@ -163,7 +164,7 @@ enum class CropImageMode {
                         }
                         canvas.save()
                         canvas.scale(heightScale, heightScale)
-                        canvas.drawImage(image, x / heightScale, 0f)
+                        canvas.drawImage(image, x / heightScale, 0f, paint())
                         canvas.restore()
                     }else if (image.height > layoutSize.height && image.width > layoutSize.width){
                         // 宽和高
@@ -176,7 +177,7 @@ enum class CropImageMode {
                             }
                             canvas.save()
                             canvas.scale(widthScale, widthScale)
-                            canvas.drawImage(image, 0f, y / widthScale)
+                            canvas.drawImage(image, 0f, y / widthScale, paint())
                             canvas.restore()
                         }else {
                             val scaleWidth = image.width * heightScale
@@ -187,20 +188,20 @@ enum class CropImageMode {
                             }
                             canvas.save()
                             canvas.scale(heightScale, heightScale)
-                            canvas.drawImage(image, x / heightScale, 0f)
+                            canvas.drawImage(image, x / heightScale, 0f, paint())
                             canvas.restore()
                         }
                     }else {
                         // None
                         val y = (layoutSize.height - image.height) / 2f
                         val x = (layoutSize.width - image.width) / 2f
-                        canvas.drawImage(image, x, y)
+                        canvas.drawImage(image, x, y, paint())
                     }
                 }
                 None -> {
                     val y = (layoutSize.height - image.height) / 2f
                     val x = (layoutSize.width - image.width) / 2f
-                    canvas.drawImage(image, x, y)
+                    canvas.drawImage(image, x, y, paint()     )
                 }
             }
         }
