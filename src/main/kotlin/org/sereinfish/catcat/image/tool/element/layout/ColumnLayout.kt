@@ -27,11 +27,11 @@ class ColumnLayout: AbstractLayout(), AlignmentLayout {
     override fun getSubElementMaxSize(index: Int, mode: ElementSize.ValueMode): Int {
         return when(mode){
             ElementSize.ValueMode.WIDTH -> {
-                elementSize.getWidth(this)
+                elementSize.getWidth(this) - padding.getSize().width
             }
             ElementSize.ValueMode.HEIGHT -> {
                 elementSize.getHeight(this) - subElementList.subList(0, index)
-                    .sumOf { it.getLayoutSize().height }
+                    .sumOf { it.getLayoutSize().height } - padding.getSize().height
             }
         }
     }
@@ -42,16 +42,20 @@ class ColumnLayout: AbstractLayout(), AlignmentLayout {
 
     override fun getAlignmentOffset(index: Int): FloatOffset {
         val subElement = subElementList[index]
-        val size = getSize()
+        val size = getSize().apply {
+            width -= padding.getSize().width
+            height -= padding.getSize().height
+        }
 
         // 子大小
         val subSize = subElement.getLayoutSize().apply {
             height = subElementList.sumOf { it.getLayoutSize().height }
         }
 
-        val baseY = subElementList.subList(0, index).sumOf { it.getLayoutSize().height }.toFloat()
+        val baseY = subElementList.subList(0, index).sumOf { it.getLayoutSize().height }.toFloat() + padding.top
         return getAlignmentOffset(size, subSize).apply {
             y += baseY
+            x += padding.left
         }
     }
 }

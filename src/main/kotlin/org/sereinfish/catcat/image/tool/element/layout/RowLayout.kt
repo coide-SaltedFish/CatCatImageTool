@@ -30,10 +30,10 @@ class RowLayout: AbstractLayout(), AlignmentLayout {
         return when(mode){
             ElementSize.ValueMode.WIDTH -> {
                 elementSize.getWidth(this) - subElementList.subList(0, index)
-                    .sumOf { it.getLayoutSize().width }
+                    .sumOf { it.getLayoutSize().width } - padding.getSize().width
             }
             ElementSize.ValueMode.HEIGHT -> {
-                elementSize.getHeight(this)
+                elementSize.getHeight(this) - padding.getSize().height
             }
         }
     }
@@ -44,16 +44,20 @@ class RowLayout: AbstractLayout(), AlignmentLayout {
 
     override fun getAlignmentOffset(index: Int): FloatOffset {
         val subElement = subElementList[index]
-        val size = getSize()
+        val size = getSize().apply {
+            width -= padding.getSize().width
+            height -= padding.getSize().height
+        }
 
         // 子大小
         val subSize = subElement.getLayoutSize().apply {
             width = subElementList.sumOf { it.getLayoutSize().width }
         }
 
-        val baseX = subElementList.subList(0, index).sumOf { it.getLayoutSize().width }.toFloat()
+        val baseX = subElementList.subList(0, index).sumOf { it.getLayoutSize().width }.toFloat() + padding.left
         return getAlignmentOffset(size, subSize).apply {
             x += baseX
+            y += padding.top
         }
     }
 }

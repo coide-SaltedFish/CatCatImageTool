@@ -41,17 +41,12 @@ interface Element {
      * 设置元素大小
      */
     fun setSize(width: Int, height: Int){
-        elementSize.heightSize.mode = ElementSize.SizeMode.SET
-        elementSize.widthSize.mode = ElementSize.SizeMode.SET
-        elementSize.heightSize.value = height
-        elementSize.widthSize.value = width
+        setWidth(width)
+        setHeight(height)
     }
 
     fun setSize(size: Int){
-        elementSize.heightSize.mode = ElementSize.SizeMode.SET
-        elementSize.widthSize.mode = ElementSize.SizeMode.SET
-        elementSize.heightSize.value = size
-        elementSize.widthSize.value = size
+        setSize(size, size)
     }
 
     fun setWidth(size: Int){
@@ -69,7 +64,7 @@ interface Element {
     }
 
     fun setMaxHeight(){
-        elementSize.widthSize.mode = ElementSize.SizeMode.MAX
+        elementSize.heightSize.mode = ElementSize.SizeMode.MAX
     }
 
     fun setAdaptiveWidth(){
@@ -77,7 +72,7 @@ interface Element {
     }
 
     fun setAdaptiveHeight(){
-        elementSize.widthSize.mode = ElementSize.SizeMode.ADAPTIVE
+        elementSize.heightSize.mode = ElementSize.SizeMode.ADAPTIVE
     }
 
     /**

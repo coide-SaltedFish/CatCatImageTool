@@ -24,7 +24,11 @@ class ElementSize(
 
     fun getWidth(element: Element): Int {
         return when(widthSize.mode){
-            SizeMode.MAX -> element.parent?.getSubElementMaxSize(element.parentIndex ?: 0, widthSize.valueMode) ?: kotlin.run {
+            SizeMode.MAX -> element.parent?.getSubElementMaxSize(element.parentIndex ?: 0, widthSize.valueMode)?.also {
+                if (it == 0){
+                    println("子元素[${element::class.java.name}]从父元素[${element.parent!!::class.java.name}]处获取到的宽度为 $it")
+                }
+            } ?: kotlin.run {
                 println("此元素没有找到父布局，无法使用最大化属性，将返回默认大小")
                 element.elementSize.widthSize.value
             }
@@ -35,7 +39,11 @@ class ElementSize(
 
     fun getHeight(element: Element): Int {
         return when(heightSize.mode){
-            SizeMode.MAX -> element.parent?.getSubElementMaxSize(element.parentIndex ?: 0, heightSize.valueMode) ?: kotlin.run {
+            SizeMode.MAX -> element.parent?.getSubElementMaxSize(element.parentIndex ?: 0, heightSize.valueMode)?.also {
+                if (it == 0){
+                    println("子元素[${element::class.java.name}]从父元素[${element.parent!!::class.java.name}]处获取到的高度为 $it")
+                }
+            } ?: kotlin.run {
                 println("此元素没有找到父布局，无法使用最大化属性，将返回默认大小")
                 element.elementSize.heightSize.value
             }

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a10cc06-b4f3-4123-9a99-f4b70971a033" name="变更" comment="完成重构，使之更加易于使用">
+    <list default="true" id="0a10cc06-b4f3-4123-9a99-f4b70971a033" name="变更" comment="增加抗锯齿">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/CropImageMode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/CropImageMode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/Element.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/Element.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/layout/AbstractLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/element/layout/AbstractLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/ElementSize.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/core/measure/size/ElementSize.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/ColumnLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/ColumnLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/RowLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sereinfish/catcat/image/tool/element/layout/RowLayout.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +110,7 @@
       <recent name="org.sereinfish.catcat.image.tool.core.context" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CatCatImageTool [build]">
+  <component name="RunManager" selected="Kotlin.MainKt (1)">
     <configuration name="CatCatImageTool [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,8 +190,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CatCatImageTool [build]" />
         <item itemvalue="Kotlin.MainKt (1)" />
+        <item itemvalue="Gradle.CatCatImageTool [build]" />
         <item itemvalue="Gradle.CatCatImageTool [run]" />
         <item itemvalue="Gradle.CatCatImageTool [clean]" />
         <item itemvalue="Kotlin.MainKt" />
@@ -217,7 +222,9 @@
       <workItem from="1684913462809" duration="27426000" />
       <workItem from="1684989004112" duration="99000" />
       <workItem from="1684998492202" duration="51000" />
-      <workItem from="1685078022628" duration="848000" />
+      <workItem from="1685078022628" duration="2274000" />
+      <workItem from="1685086046096" duration="5319000" />
+      <workItem from="1685177140025" duration="5362000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1684749759956</created>
@@ -233,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684985893373</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加抗锯齿">
+      <created>1685078996266</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685078996266</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +267,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始提交" />
     <MESSAGE value="完成重构，使之更加易于使用" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成重构，使之更加易于使用" />
+    <MESSAGE value="增加抗锯齿" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加抗锯齿" />
   </component>
 </project>

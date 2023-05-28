@@ -34,6 +34,7 @@ abstract class AbstractLayout: AbstractElement(), Layout {
     }
 
     override fun draw(canvas: Canvas, context: DrawerContext) {
+
         // 背景
         backgroundDrawer.draw(canvas, context)
         // 控件
